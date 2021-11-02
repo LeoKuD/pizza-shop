@@ -4,7 +4,7 @@ header {
   grid-column: 2 / 3;
   display: grid;
   grid-template: minmax(140px, auto) / minmax(auto, 1140px) minmax(auto, 200px);
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0 ;
   background-color: #fff;
   hr {
     grid-column: 1 / 4;
