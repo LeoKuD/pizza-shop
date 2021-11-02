@@ -1,0 +1,66 @@
+.sotring_container {
+  font-family: 'Proxima-regular', serif;
+  display: grid;
+  justify-items: end;
+  margin-right: 50px;
+  grid-auto-flow: column;
+  align-items: center;
+  position: relative;
+  justify-content: end;
+
+  .custom_select_container {
+    display: inline-block;
+    min-width: 130px;
+    text-align: center;
+    position: relative;
+  }
+
+  .selected_text {
+    border-bottom: 2px dashed #fe5f1e;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  .sorting_pre_text::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    border: 7px solid transparent;
+    left: 85px;
+    border-color: #000 transparent transparent transparent;
+  }
+
+  .sorting_pre_text.active::before {
+    top: 0px;
+    border-color: transparent transparent black transparent;
+  }
+
+  ul {
+    margin-top: 10px;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Параметры тени */
+  }
+
+  .select_options {
+    position: absolute;
+    width: 100%;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 6px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  li:hover {
+    background-color: rgba(254, 95, 30, 0.05);
+    color: #fe5f1e;
+    font-weight: bold;
+  }
+  .custom_select_option {
+    text-align: center;
+  }
+}
