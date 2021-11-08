@@ -1,0 +1,35 @@
+.menu_select_pizza_container {
+    display: grid;
+    align-items: center;
+    height: 85px;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-family: 'Proxima-bold', serif;
+    font-size: 16px;
+    ul {
+        padding: 0px 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+        li {
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        li:hover {
+            background-color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+    }
+        .item:nth-child(-n+2) {
+            width: 50%;
+        }
+        .item:nth-child(n+3) {
+            width: 33.3%;
+        }
+}
