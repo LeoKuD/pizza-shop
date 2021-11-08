@@ -1,6 +1,6 @@
 @import 'assets/styles/reset';
 .App {
     display: grid;
-    grid-template: 45px minmax(auto, 140px) minmax(auto, 1fr) 45px / 1fr minmax(auto, 1340px) 1fr;
+    grid-template: 45px minmax(auto, 140px) auto minmax(auto, 1fr) 45px / 1fr minmax(auto, 1340px) 1fr;
     background-color: #ffdf8c;
 }

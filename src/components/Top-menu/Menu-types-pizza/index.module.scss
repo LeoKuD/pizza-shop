@@ -18,6 +18,9 @@
     justify-items: center;
   }
   li:hover {
+    background-color: #F3F3F3;
+  }
+  .item_type_pizza.active {
     background-color: #282828;
     color: #fff;
   }
