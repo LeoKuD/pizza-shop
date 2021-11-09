@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 import style from './index.module.scss';
 
 export const MenuSorting = () => {
@@ -6,8 +7,11 @@ export const MenuSorting = () => {
     { id: 0, name: 'популярности' },
     { id: 1, name: 'алфавиту' },
   ];
-  const [defaultSelectText, setDefaultSelectText] = useState('популярности');
+  const [defaultSelectText, setDefaultSelectText] = useState(
+    optionsList[0].name
+  );
   const [showOptionList, setShowOptionList] = useState(false);
+  const selectRef = useRef();
   const handleOptionClick = (e) => {
     setDefaultSelectText(e.target.getAttribute('data-name'));
     setShowOptionList(false);
@@ -17,17 +21,18 @@ export const MenuSorting = () => {
     setShowOptionList(!showOptionList);
   };
   const handleClickOutside = (e) => {
-    if (
-      !e.target.classList.contains(style.custom_select_option) &&
-      !e.target.classList.contains(style.selected_text)
-    ) {
+    console.log(selectRef);
+    console.log(e)
+    if (!e.path.includes(selectRef.current)) {
       setShowOptionList(false);
     }
   };
-  document.addEventListener('mousedown', handleClickOutside);
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+  }, []);
 
   return (
-    <div className={style.sotring_container}>
+    <div ref={selectRef} className={style.sotring_container}>
       <span
         className={
           showOptionList
